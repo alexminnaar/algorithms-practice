@@ -92,7 +92,7 @@ public class Graph {
 
             for (Edge vEdge : v.getNeighbours()) {
                 if (vNotS.contains(vEdge.destination))
-                    LOGGER.info(String.format("Edge %s -> %s has weight %d", vEdge.source.getValue(), vEdge.destination.getValue(), vEdge.weight));
+                    //LOGGER.info(String.format("Edge %s -> %s has weight %d", vEdge.source.getValue(), vEdge.destination.getValue(), vEdge.weight));
 
                 if (vNotS.contains(vEdge.destination) && vEdge.weight < minWeight) {
                     minWeight = vEdge.weight;
@@ -106,7 +106,10 @@ public class Graph {
         return minEdge;
     }
 
-
+    /**
+     * Prim's algorithm for finding the minimum spanning tree in a graph.
+     * @return A list of edges that define the minimum spanning tree.
+     */
     public ArrayList<Edge> primMst() {
 
         Set<Vertex> s = new HashSet<>();
@@ -122,7 +125,7 @@ public class Graph {
             //find lowest weighted edge to add to mst
             Edge minEdge = primMinEdge(s, vNotS);
             LOGGER.info(String.format("Adding %s -> %s with weight %d", minEdge.source.getValue(), minEdge.destination.getValue(), minEdge.weight));
-            
+
             mst.add(minEdge);
 
             //add corresponding vertex to S and remove from V/S

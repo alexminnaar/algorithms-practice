@@ -9,7 +9,7 @@ public class Vertex {
 
     public Vertex(String startValue) {
         value = startValue;
-        neighbours = new ArrayList<Edge>();
+        neighbours = new ArrayList<>();
     }
 
     public ArrayList<Edge> getNeighbours() {
@@ -17,6 +17,8 @@ public class Vertex {
     }
 
     public void addNeighbour(Edge newNeighbour) {
+        //add new edge to this vertex's edge list
+        //TODO: Check that the source is actually this vertex
         neighbours.add(newNeighbour);
     }
 
