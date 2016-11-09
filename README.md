@@ -3,8 +3,8 @@
 
 ##Binary Search Tree
 
-*search
-*adding new ndoe
+* search
+* Adding new node
 
 
 ##Graphs
